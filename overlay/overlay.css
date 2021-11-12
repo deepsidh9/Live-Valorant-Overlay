@@ -1,0 +1,171 @@
+.topContainer {
+    height: 50%;
+}
+
+.bottomContainer {
+    display: flex;
+    justify-content: space-between;
+    /* top: 50%; */
+    /* position: absolute; */
+    width: 100%;
+}
+
+.agentsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent {
+    /* padding-top: 10px; */
+    position: relative;
+}
+.left-span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family:'Maven Pro';
+  font-weight: 700;
+  color: white;
+}
+.right-span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family:'Maven Pro';
+  font-weight: 700;
+  color: white;
+}
+.left-agent {
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    border-radius: 6px;
+}
+
+.right-agent {
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    border-radius: 6px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.allLeftInformation{
+  padding-bottom: 3px;
+  display: flex;
+}
+.allRightInformation{
+  padding-bottom: 3px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.weaponContainer{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.shieldHealthContainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  border: 1px solid black;
+  border-width: thin;
+  /* background: linear-gradient(to top, red 100%, white 0%);  */
+  /* change red percentage above to fill the column from the bottom (depends on health value) */
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  color: white;
+  font-family:'Maven Pro';
+  font-weight: 300;
+  border-radius: 5px;
+}
+
+.shieldHealthContainer span{
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+}
+
+.shieldImage {
+  height: 30px;
+  padding-bottom: 40px;
+}
+.ultimateContainer{
+  position: absolute;
+  bottom: 15;
+}
+.ultimateImage{
+  height: 30px;
+}
+
+.left-weapon{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  height: 40px;
+}
+.right-weapon{
+  height: 40px;
+}
+#roundInformation{
+  font-size:20px;
+}
+#teamInformation{
+  display: flex; justify-content: center;align-items: center;
+}
+#snackbar {
+     visibility: hidden;
+    min-width: 600px; /* Set a default minimum width */
+    
+    margin-left: -300px; /* Divide value of min-width by 2 */
+    background-image: url("postRoundToastRed.jpg") ;
+    /* background-image: linear-gradient(147deg, #000000 0%, #04619f 74%); */
+    /* background-color: #2234ae; */
+    /* background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%); */
+    /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%);     */
+    /* background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%); */
+    /* background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%); */
+     /* background-image :linear-gradient(315deg, #000000 0%, #7f8c8d 74%); */
+     color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: -100px; /* 30px from the bottom */
+    height:300px;
+    font-family:'Maven Pro';
+    font-weight: 700;
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.25s, fadeout 0.25s 3s;
+    animation: fadein 0.25s, fadeout 0.25s 3s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: -200px; opacity: 0;}
+    to {bottom: -100px; opacity: 1;}
+
+    
+    
+  }
+  
+  @keyframes fadein {
+    from {bottom: -200px; opacity: 0;}
+    to {bottom: -100px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: -100px; opacity: 1;}
+    to {bottom: -200px; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: -100px; opacity: 1;}
+    to {bottom: -200px; opacity: 0;}
+  }

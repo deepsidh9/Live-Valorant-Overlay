@@ -1,0 +1,254 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven%20Pro:medium|Maven%20Pro:bold">
+    <link rel="stylesheet" href="overlay.css">
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://cdn.socket.io/4.2.0/socket.io.min.js"></script>
+</head>
+<div class="topContainer" onclick="showPostRoundToast()"></div>
+<div id="mainContainer" class="bottomContainer">
+    <div id="blue" class="agentsContainer">
+        <div class="allLeftInformation">
+            <div class="agent">
+                <img class="left-agent" src="Original Agent Icons/Astra_icon.png" height="100" ,width="100" />
+                <span class="left-span">Name</span>
+            </div>
+            
+                 <div class="shieldHealthContainer">          
+                    <img class="shieldImage" src="Shield Icons/half.png"/>
+                <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/astra_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+            </div>
+            <div class="weaponContainer">
+                <img class="left-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+        </div>
+
+        <div class="allLeftInformation">
+            <div class="agent">
+                <img class="left-agent" src="Original Agent Icons/Breach_icon.png" height="100" ,width="100" /><span
+                    class="left-span">Name</span>
+            </div>
+                 <div class="shieldHealthContainer">          
+                
+                    <img   class="shieldImage" src="Shield Icons/half.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/breach_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                
+            
+            </div>
+
+            <div class="weaponContainer">
+                <img class="left-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+        </div>
+        <div class="allLeftInformation">
+            <div class="agent"> <img class="left-agent" src="Original Agent Icons/Brimstone_icon.png" height="100"
+                    ,width="100" /><span class="left-span">Name</span></div>
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/brimstone_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="left-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+        </div>
+
+        <div class="allLeftInformation">
+            <div class="agent"> <img class="left-agent" src="Original Agent Icons/Cypher_icon.png" height="100"
+                    ,width="100" /><span class="left-span">Name</span></div>
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/cypher_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="left-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+        </div>
+
+        <div class="allLeftInformation">
+            <div class="agent"> <img class="left-agent" src="Original Agent Icons/Omen_icon.png" height="100"
+                    ,width="100" /><span class="left-span">Name</span></div>
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/omen_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="left-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+        </div>
+
+    </div>
+    <div id="red" class="agentsContainer">
+        <div class="allRightInformation">
+
+            <div class="agent"><img class="right-agent" src="Original Agent Icons/Yoru_icon.png" height="100"
+                    ,width="100" /><span class="right-span">Name</span></div>
+
+
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/yoru_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="right-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+
+        </div>
+
+        <div class="allRightInformation">
+
+            <div class="agent"><img class="right-agent" src="Original Agent Icons/Sage_icon.png" height="100"
+                    ,width="100" /><span class="right-span">Name</span></div>
+
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/sage_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="right-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+
+        </div>
+
+        <div class="allRightInformation">
+
+            <div class="agent"><img class="right-agent" src="Original Agent Icons/Killjoy_icon.png" height="100"
+                    ,width="100" /><span class="right-span">Name</span></div>
+
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/killjoy_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="right-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+
+        </div>
+
+        <div class="allRightInformation">
+
+            <div class="agent"><img class="right-agent" src="Original Agent Icons/Kayo_icon.png" height="100"
+                    ,width="100" /><span class="right-span">Name</span></div>
+
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/kayo_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="right-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+
+        </div>
+
+        <div class="allRightInformation">
+
+            <div class="agent"><img class="right-agent" src="Original Agent Icons/Jett_icon.png" height="100"
+                    ,width="100" /><span class="right-span">Name</span></div>
+
+                 <div class="shieldHealthContainer">         
+                    <img  class="shieldImage"  src="Shield Icons/full.png"/>
+
+                                    <div class="ultimateContainer">
+
+                    <img class ="ultimateImage" src="Ultimate Icons/jett_ult.png"/>
+                    
+                    
+                    
+                </div>
+                <span>6/7</span>
+                </div>
+            <div class="weaponContainer">
+                <img class="right-weapon" src="Weapon Images/vandal.png" height="100" ,width="100" />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div id="snackbar">
+    <div id="roundInformation">Round 1</div>
+    <div id="teamInformation">
+        <div id="teamLogo">
+            <img height="150" ,width="150" src="redTeamLogo.png" />
+        </div>
+        <div id="teamName" style="font-size:70px">
+            Ballistix
+        </div>
+    </div>
+    <div style="font-size:35px">
+        WIN
+    </div>
+</div>
+
+</html>
