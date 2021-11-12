@@ -36,7 +36,8 @@ Score can be implemented through the in-game API fairly easily. See Possible Fut
 ```sh
 pip install -r requirements.txt
 ```
-You also need to install the latest build of  [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki) if you intend to use that instead of easyocr. It's totally up to you. You would need to make changes in the code as necessary, however OCR is only a small part of the app.
+#### Optional Dependency - Tesseract
+You would need to install the latest build of  [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki) if you intend to use that instead of easyocr. It's totally up to you. You would need to make changes in the code as necessary, however OCR is only a small part of the app.
 ## Usage
 
 1.  Run Python Server
