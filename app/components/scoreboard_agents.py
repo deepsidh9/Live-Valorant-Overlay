@@ -14,11 +14,11 @@ class GetScoreBoardAgents():
         template_directory = os.path.abspath(os.path.join(
             __file__, "../../templates/agent_templates"))
         all_templates = [image for image in glob.glob(
-            template_directory+"/*_resized.png")]
+            template_directory+"/*_icon.png")]
         for template in all_templates:
             agent = (template.split(r"\agent_templates"))[
                 1].split("_icon")[0][1:]
-            original = cv2.resize(cv2.imread(template), (35, 35))
+            original = cv2.resize(cv2.imread(template), (33, 33))
             generated_agent_templates.append({
                 "agent": agent,
                 "original": original
@@ -37,23 +37,22 @@ class GetScoreBoardAgents():
     def process_frame(self, screen_frame, side):
         all_agents = []
         if side == "top":
-            y_start = 379
-            y_end = 414
+            y_start = 338 #ends at 372
         else:
-            y_start = 379
-            y_end = 414
+            y_start = 570
+        y_end = y_start + 34
         for agent_place in range(0, 5):
-            cropped_agent_image = screen_frame[y_start:y_end, 531:566]
+            cropped_agent_image = screen_frame[y_start:y_end, 573:607]
             identified_agent = self.identify_agent(cropped_agent_image)
             all_agents.append(identified_agent)
-            y_start = y_start + 37
-            y_end = y_end + 37
+            y_start = y_start + 34
+            y_end = y_end + 34
         return all_agents
 
     def get_agents(self, main_frame):
         agents = {"top": [], "bottom": []}
         agents["top"] = self.process_frame(main_frame, "top")
-        # agents["bottom"] = self.process_frame(main_frame,"bottom")
+        agents["bottom"] = self.process_frame(main_frame,"bottom")
         return agents
 
 
@@ -61,7 +60,7 @@ if __name__ == "__main__":
     get_score_board_agents = GetScoreBoardAgents()
     tab_images_directory = os.path.abspath(
         os.path.join(__file__, "../../test_images/Tab Images/"))
-    for i in range(2, 10):
+    for i in range(1, 7):
         start = time.time()
         image = cv2.imread('{}/{}.png'.format(tab_images_directory, i))
         print("=======================")
