@@ -13,7 +13,7 @@ class GetSpike():
 
     def get_spike_status(self, frame):
         # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)[40:66,894:915]
-        frame = frame[88:91, 957:962]
+        frame = frame[78:81, 956:963]
         average_color = cv2.mean(frame)
         # print( "average_color",average_color)
         # cv2.imshow("frame1",frame)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     spike_handler = GetSpike()
     feed_images_directory = os.path.abspath(
         os.path.join(__file__, "../../test_images/Feed Images/"))
-    for i in range(1, 58):
+    for i in range(1, 6):
         start = time.time()
         image = cv2.imread('{}/feed{}.png'.format(feed_images_directory, i))
         # copy= image.copy()
