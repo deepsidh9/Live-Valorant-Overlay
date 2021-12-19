@@ -31,13 +31,12 @@ class GetUltimates():
     def process_frame(self, frame, side):
         all_points = []
         if side == "top":
-            y_start = 382
-            y_end = 413
+            y_start = 338
         else:
-            y_start = 386
-            y_end = 402
+            y_start = 570 
+        y_end = y_start + 34
         for agent_row in range(0, 5):
-            cropped_score_image = frame[y_start:y_end, 841:859]
+            cropped_score_image = frame[y_start:y_end, 854:868]
             points = self.reader.readtext(self.clean_frame(
                 cropped_score_image), allowlist='0123456789')
             # print("points",points)
@@ -48,14 +47,14 @@ class GetUltimates():
                 if points["confidence"] < .35:
                     points = "READY"
             all_points.append(points)
-            y_start = y_start + 37
-            y_end = y_start + 31
+            y_start = y_start + 34
+            y_end = y_start + 34
         return all_points
 
     def get_ultimate_points(self, frame):
         all_ultimates = {"top": [], "bottom": []}
         all_ultimates["top"] = self.process_frame(frame, "top")
-        # all_ultimates["bottom"] = self.process_frame(frame,"bottom")
+        all_ultimates["bottom"] = self.process_frame(frame,"bottom")
         return all_ultimates
 
 
@@ -63,7 +62,7 @@ if __name__ == "__main__":
     get_all_ultimates = GetUltimates()
     tab_images_directory = os.path.abspath(
         os.path.join(__file__, "../../test_images/Tab Images/"))
-    for i in range(1, 12):
+    for i in range(1, 7):
         start = time.time()
         image = cv2.imread('{}/{}.png'.format(tab_images_directory, i))
         print("===================Image No. {}===================".format(i))
