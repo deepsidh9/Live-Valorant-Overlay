@@ -15,13 +15,13 @@ class GetLiveAgents():
         template_directory = os.path.abspath(os.path.join(
             __file__, "../../templates/agent_templates"))
         all_templates = [image for image in glob.glob(
-            template_directory+"/*_resized.png")]
+            template_directory+"/*_icon.png")]
         for template in all_templates:
             agent = (template.split(r"\agent_templates"))[
                 1].split("_icon")[0][1:]
             original = cv2.resize(cv2.imread(
-                template, cv2.IMREAD_UNCHANGED), (44, 44))
-            gray = cv2.resize(cv2.imread(template, 0), (44, 44))
+                template, cv2.IMREAD_UNCHANGED), (40,40))
+            gray = cv2.resize(cv2.imread(template, 0), (40,40))
             o_ret, original_mask = cv2.threshold(
                 original[:, :, 3], 0, 255, cv2.THRESH_BINARY)
             f_ret, original_flipped_mask = cv2.threshold(
@@ -53,19 +53,19 @@ class GetLiveAgents():
 
     def process_frame(self, screen_frame, side):
         all_agents = []
+        width=44 
+        space_between_agents = 66 
         if side == "left":
-            x_start = 389
+            x_start = 442 
         else:
-            x_start = 1192
-        x_end = x_start + 48
+            x_start = 1169 
+        x_end = x_start + width
         for agent_place in range(0, 5):
-            cropped_agent_image = screen_frame[33:77, x_start:x_end]
+            cropped_agent_image = screen_frame[28:72, x_start:x_end]
             identified_agent = self.identify_agent(cropped_agent_image, side)
-            # if identified_agent:
-            #     all_agents.append(identified_agent)
             all_agents.append(identified_agent)
-            x_start = x_start + 73
-            x_end = x_start + 48
+            x_start = x_start + space_between_agents
+            x_end = x_start + width
         return all_agents
 
     def get_agents(self, main_frame):
@@ -81,12 +81,11 @@ if __name__ == "__main__":
     get_live_agents = GetLiveAgents()
     feed_images_directory = os.path.abspath(
         os.path.join(__file__, "../../test_images/Feed Images/"))
-    for i in range(1, 54):
+    for i in range(1, 6):
         print("=======================")
         print("FILE: ", i)
         start = time.time()
         img = cv2.imread('{}/feed{}.png'.format(feed_images_directory, i))
-        # cv2.imshow("img",img)
         agents_alive = get_live_agents.get_agents(img)
         print(agents_alive)
         end = time.time()
