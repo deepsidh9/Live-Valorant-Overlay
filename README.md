@@ -23,7 +23,7 @@ An Overlay proof-of-concept Application for Valorant giving information in real-
 
   
 
--  [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/1920x1080) **OR**  [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/)
+-  [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1080) **OR**  [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/)
 
   
 
@@ -287,7 +287,7 @@ Feel free to develop your own overlay using the data received from the server.
 
   
 
-For now the values for [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/1920x1080) or [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1200) are hardcoded.
+For now the values for [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1080) or [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/) are hardcoded.
 
   
 
@@ -313,7 +313,7 @@ You can compare both the branches to see what changes have to be made in order t
 
   
 
-**This is only relevant for the [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1200) resolution as the modules only process the top part of the scoreboard for that resolution. This functionality has been completed for the [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/1920x1080) resolution.**
+**This is only relevant for the [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/) resolution as the modules only process the top part of the scoreboard for that resolution. This functionality has been completed for the [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1080) resolution.**
 
   
 
