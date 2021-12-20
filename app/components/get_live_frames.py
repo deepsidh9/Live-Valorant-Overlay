@@ -47,7 +47,7 @@ def start_frame_grabbing():
     while(True):
         start = time.time()
         w = 1920  # set this
-        h = 1200  # set this
+        h = 1080  # set this
 
         wDC = win32gui.GetWindowDC(hwnd)
         dcObj = win32ui.CreateDCFromHandle(wDC)

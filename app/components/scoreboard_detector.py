@@ -11,7 +11,7 @@ class ScoreBoardDetector():
 
     def detect_scoreboard(self, frame):
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        frame = frame[355:370, 610:656]
+        frame = frame[317:329,650:684]
         result = cv2.matchTemplate(
             frame, self.scoreboard_template, cv2.TM_CCOEFF_NORMED)
         print("Scoreboard result", cv2.minMaxLoc(result))
@@ -22,9 +22,10 @@ class ScoreBoardDetector():
 
 if __name__ == '__main__':
     scoreboard_detector = ScoreBoardDetector()
-    feed_images_directory = os.path.abspath(
-        os.path.join(__file__, "../../test_images/Feed Images/"))
-    for i in range(1, 58):
-        image = cv2.imread('{}/feed{}.png'.format(feed_images_directory, i))
+    tab_images_directory = os.path.abspath(
+        os.path.join(__file__, "../../test_images/Tab Images/"))
+    for i in range(1, 6):
+        image = cv2.imread('{}/{}.png'.format(tab_images_directory, i))
         print("===================Image No. {}===================".format(i))
         print(scoreboard_detector.detect_scoreboard(image))
+

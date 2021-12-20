@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import numpy as np
 from easyocr import Reader
@@ -22,15 +24,20 @@ class GetScore():
 
     def get_score(self, screen_frame):
         left_score = self.reader.readtext(self.clean_frame(
-            screen_frame[43:68, 790:830]), allowlist='0123456789')
+            screen_frame[31:63, 809:837]), allowlist='0123456789')
         right_score = self.reader.readtext(self.clean_frame(
-            screen_frame[43:68, 1095:1140]), allowlist='0123456789')
+            screen_frame[31:63, 1085:1113]), allowlist='0123456789')
         if left_score == [] or right_score == []:
             return None
         else:
             return [left_score[0][1], right_score[0][1]]
 
-# if __name__ == '__main__':
-#     score_helper = GetScore()
-#     image = cv2.imread("Tab Images/3.png")
-#     print(score_helper.get_score(image))
+
+if __name__ == '__main__':
+    score_helper = GetScore()
+    feed_images_directory = os.path.abspath(
+        os.path.join(__file__, "../../test_images/Feed Images/"))
+    for i in range(1, 6):
+        image = cv2.imread('{}/feed{}.png'.format(feed_images_directory, i))
+        print("===================Image No. {}===================".format(i))
+        print(score_helper.get_score(image))
