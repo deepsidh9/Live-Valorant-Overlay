@@ -226,4 +226,4 @@ agents_ultimate_points = {"phoenix": 6, "jett": 6, "viper": 7,
                           "raze": 6, "breach": 7, "sage": 7,
                           "brimstone": 6, "reyna": 6, "killjoy": 7,
                           "astra": 7, "yoru": 6, "kayo": 7,
-                          "skye": 7}
+                          "skye": 7,"chamber":7}
