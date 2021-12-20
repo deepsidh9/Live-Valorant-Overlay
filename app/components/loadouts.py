@@ -40,17 +40,16 @@ class GetLoadouts():
     def identify_weapons(self, frame, side):
         all_identified_weapons = []
         if side == "top":
-            y_start = 380
-            y_end = 410
+            y_start = 340
         else:
-            y_start = 380  # fix this
-            y_end = 410  # fix this
+            y_start = 570
+        y_end = y_start + 34
         for agent_loadout in range(0, 5):
-            resized_frame = frame[y_start:y_end, 1065:1204]
+            resized_frame = frame[y_start:y_end, 1056:1056+120]
             identified_weapon = self.process_loadouts_frame(resized_frame)
             all_identified_weapons.append(identified_weapon)
-            y_start = y_start + 38
-            y_end = y_end + 38
+            y_start = y_start + 34
+            y_end = y_start + 34
         return all_identified_weapons
 
     def get_loadouts(self, frame):
@@ -58,6 +57,8 @@ class GetLoadouts():
         main_frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         all_identified_weapons["top"] = self.identify_weapons(
             main_frame_gray, "top")
+        all_identified_weapons["bottom"] = self.identify_weapons(
+            main_frame_gray, "bottom")
         return all_identified_weapons
 
 
@@ -65,7 +66,7 @@ if __name__ == "__main__":
     get_all_loadouts = GetLoadouts()
     tab_images_directory = os.path.abspath(
         os.path.join(__file__, "../../test_images/Tab Images/"))
-    for i in range(2, 10):
+    for i in range(4, 7):
         start = time.time()
         image = cv2.imread('{}/{}.png'.format(tab_images_directory, i))
         print("===================Image No. {}===================".format(i))
