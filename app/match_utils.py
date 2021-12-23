@@ -32,25 +32,13 @@ class MatchUtils():
                 else:
                     value["alive"] = False
                     value["health"] = 0
-
-        if "agents_with_loadouts_shields" in new_data:
-            for side in ["blue", "red"]:
-                for index, (key, value) in enumerate(match_details[side].items()):
-                    if value["agent"] in [agent.lower() for agent in new_data["alive_agents"][side] if agent is not None]:
-                        value["alive"] = True
-                        if side == "blue":
-                            value["health"] = new_data["health_values"][side][index]
-                        else:
-                            value["health"] = 100
-                    else:
-                        value["alive"] = False
-                        value["health"] = 0
-                    for agent_information in new_data["agents_with_loadouts_shields"]:
-                        if side == "blue":
-                            if agent_information[0].lower() == value["agent"].lower():
-                                value["weapon"] = agent_information[1]
-                                value["shield"] = agent_information[2]
-                                value["current_ultimate_points"] = agent_information[3]["number"]
+                if "agents_with_loadouts_shields" in new_data:
+                    for agent_information in new_data["agents_with_loadouts_shields"][side]:
+                        print("agent_information",agent_information,side)
+                        if agent_information[0].lower() == value["agent"].lower():
+                            value["weapon"] = agent_information[1]
+                            value["shield"] = agent_information[2]
+                            value["current_ultimate_points"] = agent_information[3]["number"]
 
         return match_details
 

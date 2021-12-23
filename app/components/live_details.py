@@ -53,8 +53,11 @@ class LiveDetails():
             shields = self.shield_helper.get_shields(frame)
             loadouts = self.loadout_helper.get_loadouts(frame)
             scoreboard_agents = self.scoreboard_agents_helper.get_agents(frame)
-            agents_with_loadouts_shields = list(
+            agents_with_loadouts_shields={}
+            agents_with_loadouts_shields["blue"] = list(
                 zip(scoreboard_agents["top"], loadouts["top"], shields["top"], agents_ultimate_points["top"]))
+            agents_with_loadouts_shields["red"] = list(
+                zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"]))
 
             return({"score": "score", "spike_status": spike_status,
                     "agents_with_loadouts_shields": agents_with_loadouts_shields,
