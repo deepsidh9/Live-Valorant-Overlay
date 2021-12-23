@@ -1,3 +1,5 @@
+Pillow
+Flask-SocketIO
 opencv-python
 socketIO-client==0.7.2
 websocket-client==1.2.1
@@ -10,6 +12,6 @@ requests
 easyocr
 pytesseract
 numpy
-pywin32==300
+pywin32
 pywin32-ctypes==0.2.0
 pywinpty==0.5.7
