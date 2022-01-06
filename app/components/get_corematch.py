@@ -304,6 +304,7 @@ class GetCoreMatch():
         if game_state == "INGAME":
             initiated_player_team="blue"
             Players = self.get_coregame_stats()["Players"]
+            Players= [player for player in Players if player["TeamID"] in ["Blue","Red"]]
             # print("Players INGAME",Players)
             # partyOBJ = get_party_json(get_PlayersPuuid(Players), presence)
             names = self.get_names_from_puuids(Players)
