@@ -31,7 +31,7 @@ socket_io.on('kill_self', kill_self)
 
 
 def get_hwnd():
-    return win32gui.FindWindow(None, "VALORANT  ")
+      return win32gui.GetDesktopWindow()
 
 
 def convert(o):
@@ -56,9 +56,11 @@ def start_frame_grabbing():
         dataBitMap.CreateCompatibleBitmap(dcObj, w, h)
         cDC.SelectObject(dataBitMap)
         cDC.BitBlt((0, 0), (w, h), dcObj, (0, 0), win32con.SRCCOPY)
+        
         #if you want to save the image, uncomment the following 2 lines:
-        # bmpfilenamename = "out{}.bmp".format(i)
-        # dataBitMap.SaveBitmapFile(cDC, bmpfilenamename)
+        bmpfilenamename = "out{}.bmp".format(i)
+        dataBitMap.SaveBitmapFile(cDC, bmpfilenamename)
+        
         bmpstr = dataBitMap.GetBitmapBits(True)
         img = np.fromstring(bmpstr, dtype='uint8')
         img.shape = (h, w, 4)
@@ -69,7 +71,9 @@ def start_frame_grabbing():
             # response = requests.post('http://localhost:4445/register_events', json={"events":detected_events})
             socket_io.emit('new_event', {'event': detected_events})
         end = time.time()
-        # print("Time elapsed for 1 frame event detection:",end-start)
+        
+        #print("Time elapsed for 1 frame event detection:",end-start)
+        
         if end-start < 1:
             time.sleep(1-(end-start))
         i = i+1

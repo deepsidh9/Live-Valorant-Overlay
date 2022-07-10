@@ -1,9 +1,10 @@
 Pillow
 Flask-SocketIO
-opencv-python
+opencv-python==4.5.4.58
 socketIO-client==0.7.2
 websocket-client==1.2.1
 python-socketio==5.4.0
+simple-websocket
 Flask
 Flask-Cors
 prettytable
