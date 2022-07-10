@@ -58,8 +58,8 @@ def start_frame_grabbing():
         cDC.BitBlt((0, 0), (w, h), dcObj, (0, 0), win32con.SRCCOPY)
         
         #if you want to save the image, uncomment the following 2 lines:
-        bmpfilenamename = "out{}.bmp".format(i)
-        dataBitMap.SaveBitmapFile(cDC, bmpfilenamename)
+        #bmpfilenamename = "out{}.bmp".format(i)
+        #dataBitMap.SaveBitmapFile(cDC, bmpfilenamename)
         
         bmpstr = dataBitMap.GetBitmapBits(True)
         img = np.fromstring(bmpstr, dtype='uint8')
